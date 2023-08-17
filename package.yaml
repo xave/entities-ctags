@@ -2,9 +2,9 @@ name:                entities-ctags
 version:             0.1.0.0
 github:              "githubuser/entities-ctags"
 license:             BSD3
-author:              "Author name here"
+author:              "Xavier Waller"
 maintainer:          "example@example.com"
-copyright:           "2023 Author name here"
+copyright:           "2023 Xavier Waller"
 
 extra-source-files:
 - README.md
@@ -35,6 +35,9 @@ ghc-options:
 
 library:
   source-dirs: src
+  dependencies:
+    - persistent
+    - persistent-qq
 
 executables:
   entities-ctags-exe:
