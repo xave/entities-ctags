@@ -1,0 +1,22 @@
+{-# LANGUAGE TemplateHaskell #-}
+{-# LANGUAGE NoDeriveAnyClass #-}
+
+-- This is a sample Haskell file with persist template Haskell in it
+module MyModule
+  (module MyModule
+  ) where
+
+import FooBar
+import BarBaz
+import Persistent
+
+
+mkPersist
+  sqlSettings
+  [persistLowerCase|
+MyTableName sql=my_table_name
+  field1 Int Maybe
+  field2 Text Maybe
+  field3 Double sql=super_field
+  deriving Show Eq Ord Generic
+|]
